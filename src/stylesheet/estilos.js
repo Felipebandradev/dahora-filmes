@@ -2,18 +2,21 @@ import { StyleSheet } from "react-native";
 
 const estilosInicio = StyleSheet.create({
   container: {
-    backgroundColor: "yellow",
+    backgroundColor: "#fff",
     flex: 1,
   },
 
   viewLogo: {
-    backgroundColor: "green",
     flex: 0.7,
     alignItems: "center",
     justifyContent: "flex-end",
     width: "80%",
     marginLeft: "auto",
     marginRight: "auto",
+  },
+  logo: {
+    width: 170,
+    height: 170,
   },
   viewBotoes: {
     flex: 0.4,
