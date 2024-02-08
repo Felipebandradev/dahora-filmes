@@ -36,7 +36,32 @@ const estilos = StyleSheet.create({
 
   viewLogo: {
     backgroundColor: "green",
-    flex: 0.5,
+    flex: 0.7,
     alignItems: "center",
+    justifyContent: "flex-end",
+    width: "79.9%",
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+  viewBotoes: {
+    flex: 0.4,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "flex-start",
+    width: "79.9%",
+    marginLeft: "auto",
+    marginRight: "auto",
+    backgroundColor: "orange",
+  },
+
+  viewRodape: {
+    flex: 0.15,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    backgroundColor: "red",
+    width: "79.9%",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
 });
