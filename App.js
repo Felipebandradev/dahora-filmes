@@ -1,6 +1,7 @@
 import {
   Button,
   Image,
+  Pressable,
   SafeAreaView,
   StatusBar,
   Text,
@@ -21,8 +22,12 @@ export default function App() {
           <Text>Dá Hora Filmes</Text>
         </View>
         <View style={estilosInicio.viewBotoes}>
-          <Button title="Buscar Filmes" />
-          <Button title="Favoritos" />
+          <Pressable style={estilosInicio.botao}>
+            <Text style={estilosInicio.textoBotao}>Buscar Filmes</Text>
+          </Pressable>
+          <Pressable style={estilosInicio.botao}>
+            <Text style={estilosInicio.textoBotao}>Favoritos</Text>
+          </Pressable>
         </View>
         <View style={estilosInicio.viewRodape}>
           <Button title="privacidade" />

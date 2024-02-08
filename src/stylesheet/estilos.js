@@ -26,7 +26,16 @@ const estilosInicio = StyleSheet.create({
     width: "80%",
     marginLeft: "auto",
     marginRight: "auto",
-    backgroundColor: "orange",
+  },
+  botao: {
+    borderStyle: "solid",
+    borderWidth: 2,
+    padding: 16,
+    backgroundColor: "#4d4491",
+    borderRadius: 15,
+  },
+  textoBotao: {
+    color: "#fff",
   },
 
   viewRodape: {
