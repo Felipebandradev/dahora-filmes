@@ -28,4 +28,15 @@ export default function App() {
   );
 }
 
-const estilos = StyleSheet.create({});
+const estilos = StyleSheet.create({
+  container: {
+    backgroundColor: "yellow",
+    flex: 1,
+  },
+
+  viewLogo: {
+    backgroundColor: "green",
+    flex: 0.5,
+    alignItems: "center",
+  },
+});
