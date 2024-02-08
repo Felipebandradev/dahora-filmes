@@ -1,0 +1,41 @@
+import { StyleSheet } from "react-native";
+
+const estilosInicio = StyleSheet.create({
+  container: {
+    backgroundColor: "yellow",
+    flex: 1,
+  },
+
+  viewLogo: {
+    backgroundColor: "green",
+    flex: 0.7,
+    alignItems: "center",
+    justifyContent: "flex-end",
+    width: "80%",
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+  viewBotoes: {
+    flex: 0.4,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "flex-start",
+    width: "80%",
+    marginLeft: "auto",
+    marginRight: "auto",
+    backgroundColor: "orange",
+  },
+
+  viewRodape: {
+    flex: 0.15,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    backgroundColor: "red",
+    width: "80%",
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+});
+
+export { estilosInicio };
