@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from "react-native";
-
+import { MaterialCommunityIcons, Fontisto } from "@expo/vector-icons";
 import logo from "./assets/images/logo.png";
 
 import { estilosInicio } from "./src/stylesheet/estilos";
@@ -23,10 +23,34 @@ export default function App() {
         </View>
         <View style={estilosInicio.viewBotoes}>
           <Pressable style={estilosInicio.botao}>
-            <Text style={estilosInicio.textoBotao}>Buscar Filmes</Text>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                gap: 2,
+              }}
+            >
+              <MaterialCommunityIcons
+                name="filmstrip-box-multiple"
+                size={16}
+                color="white"
+              />
+              <Text style={estilosInicio.textoBotao}>Buscar Filmes</Text>
+            </View>
           </Pressable>
           <Pressable style={estilosInicio.botao}>
-            <Text style={estilosInicio.textoBotao}>Favoritos</Text>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                gap: 2,
+              }}
+            >
+              <Fontisto name="favorite" size={16} color="white" />
+              <Text style={estilosInicio.textoBotao}>Favoritos</Text>
+            </View>
           </Pressable>
         </View>
         <View style={estilosInicio.viewRodape}>
