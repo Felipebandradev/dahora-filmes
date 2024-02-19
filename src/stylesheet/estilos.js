@@ -1,7 +1,6 @@
 import { StyleSheet } from "react-native";
 
 const estilosInicio = StyleSheet.create({
-
   viewLogo: {
     flex: 0.7,
     alignItems: "center",
@@ -66,4 +65,31 @@ const estilosContainer = StyleSheet.create({
   },
 });
 
-export { estilosInicio, estilosContainer };
+const estiloSobre = StyleSheet.create({
+  subContainer: {
+    flex: 1,
+    padding: 16,
+  },
+  subtitulo: {
+    fontFamily: "NotoSans",
+    marginVertical: 8,
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  texto: {
+    marginVertical: 8,
+  },
+  nomeApp: {
+    fontWeight: "bold",
+    color: "#5a51a6",
+  },
+  logo: {
+    width: 125,
+  },
+  formatLogo: {
+    alignItems: "center",
+    marginVertical: 8,
+  },
+});
+
+export { estilosInicio, estilosContainer, estiloSobre };

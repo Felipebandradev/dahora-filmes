@@ -10,7 +10,7 @@ SplashScreen.preventAutoHideAsync();
 export default function SafeContainer({ children }) {
   const [fontsLoaded, fontError] = useFonts({
     "Monoton-Regular": require("../../assets/fonts/Monoton-Regular.ttf"),
-    NotoSans: require("../../assets/fonts/NotoSans-VariableFont.ttf"),
+    "NotoSans": require("../../assets/fonts/NotoSans-VariableFont.ttf"),
   });
 
   const aoAtualizarLayout = useCallback(async () => {
