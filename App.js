@@ -84,20 +84,18 @@ export default function App() {
           </Pressable>
         </View>
         <View style={estilosInicio.viewRodape}>
-        
-          <Pressable>
-            <Text>
+          <Pressable style={estilosInicio.botaoRodape}>
+            <Text style={estilosInicio.textoBotao}>
               <Ionicons name="lock-closed" size={24} color="white" />
               Privacidade
             </Text>
           </Pressable>
-          <Pressable>
-            <Text>
-            <Ionicons name="information-circle" size={24} color="white" />
-             Sobre
+          <Pressable style={estilosInicio.botaoRodape}>
+            <Text style={estilosInicio.textoBotao}>
+              <Ionicons name="information-circle" size={24} color="white" />
+              Sobre
             </Text>
           </Pressable>
-          
         </View>
       </SafeAreaView>
     </>

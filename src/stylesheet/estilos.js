@@ -36,26 +36,28 @@ const estilosInicio = StyleSheet.create({
   botao: {
     // borderStyle: "solid",
     // borderWidth: 2,
-    padding: 14,
+    padding: 16,
     backgroundColor: "#4d4491",
     borderRadius: 15,
   },
   textoBotao: {
     color: "#fff",
     fontFamily: "NotoSans",
-    fontWeight: "Bold",
+    fontWeight: "bold",
     fontSize: 16,
+    alignItems: "center",
   },
 
   viewRodape: {
+    width: "100%",
     flex: 0.15,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "red",
-    width: "80%",
-    marginLeft: "auto",
-    marginRight: "auto",
+    backgroundColor: "#5a51a6",
+  },
+  botaoRodape: {
+    padding: 16,
   },
 });
 
