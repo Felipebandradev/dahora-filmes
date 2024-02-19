@@ -1,10 +1,6 @@
 import { StyleSheet } from "react-native";
 
 const estilosInicio = StyleSheet.create({
-  container: {
-    backgroundColor: "#fff",
-    flex: 1,
-  },
 
   viewLogo: {
     flex: 0.7,
@@ -61,4 +57,13 @@ const estilosInicio = StyleSheet.create({
   },
 });
 
-export { estilosInicio };
+const estilosContainer = StyleSheet.create({
+  container: {
+    backgroundColor: "#fff",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
+
+export { estilosInicio, estilosContainer };

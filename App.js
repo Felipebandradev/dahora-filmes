@@ -1,5 +1,4 @@
 import {
-  Button,
   Image,
   Pressable,
   SafeAreaView,
@@ -11,42 +10,12 @@ import { MaterialCommunityIcons, Fontisto, Ionicons } from "@expo/vector-icons";
 import logo from "./assets/images/logo.png";
 
 import { estilosInicio } from "./src/stylesheet/estilos";
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-import { useCallback } from "react";
-
-/* Menter a Tela de splash ativa enquanto  não programarmos a ação  */
-SplashScreen.preventAutoHideAsync();
+import SafeContainer from "./src/components/SafeContainer";
 
 export default function App() {
-  const [fontsLoaded, fontError] = useFonts({
-    "Monoton-Regular": require("./assets/fonts/Monoton-Regular.ttf"),
-    NotoSans: require("./assets/fonts/NotoSans-VariableFont.ttf"),
-  });
-
-  /* Funçãoatrelada ao use callback.
-  Quando uma função está conectada ao useCallBack,
-  Garantimos que a referência dela é armazenada na memória uma 
-  só vez  */
-  const aoAtualizarLayout = useCallback(async () => {
-    /* Se estiver tudo ok com o carregaento */
-    if (fontsLoaded || fontError) {
-      /* Escondemos a splash screen */
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded, fontError]);
-
-  if (!fontsLoaded && !fontError) {
-    return null;
-  }
-
   return (
     <>
-      <StatusBar barStyle="light-content" />
-      <SafeAreaView
-        style={estilosInicio.container}
-        onLayout={aoAtualizarLayout}
-      >
+      <SafeContainer>
         <View style={estilosInicio.viewLogo}>
           <Image source={logo} style={estilosInicio.logo} />
           <Text style={estilosInicio.titulo}>Dá Hora Filmes</Text>
@@ -97,7 +66,7 @@ export default function App() {
             </Text>
           </Pressable>
         </View>
-      </SafeAreaView>
+      </SafeContainer>
     </>
   );
 }
