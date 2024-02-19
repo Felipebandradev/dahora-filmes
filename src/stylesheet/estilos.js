@@ -22,7 +22,7 @@ const estilosInicio = StyleSheet.create({
     fontFamily: "Monoton-Regular",
     fontSize: 30,
     color: "#5a51a6",
-    textAlign: "center"
+    textAlign: "center",
   },
   viewBotoes: {
     flex: 0.4,
@@ -42,6 +42,9 @@ const estilosInicio = StyleSheet.create({
   },
   textoBotao: {
     color: "#fff",
+    fontFamily: "NotoSans",
+    fontWeight: "Bold",
+    fontSize: 16,
   },
 
   viewRodape: {

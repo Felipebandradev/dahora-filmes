@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from "react-native";
-import { MaterialCommunityIcons, Fontisto } from "@expo/vector-icons";
+import { MaterialCommunityIcons, Fontisto, Ionicons } from "@expo/vector-icons";
 import logo from "./assets/images/logo.png";
 
 import { estilosInicio } from "./src/stylesheet/estilos";
@@ -21,6 +21,7 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
     "Monoton-Regular": require("./assets/fonts/Monoton-Regular.ttf"),
+    NotoSans: require("./assets/fonts/NotoSans-VariableFont.ttf"),
   });
 
   /* Funçãoatrelada ao use callback.
@@ -83,8 +84,20 @@ export default function App() {
           </Pressable>
         </View>
         <View style={estilosInicio.viewRodape}>
-          <Button title="privacidade" />
-          <Button title="Sobre" />
+        
+          <Pressable>
+            <Text>
+              <Ionicons name="lock-closed" size={24} color="white" />
+              Privacidade
+            </Text>
+          </Pressable>
+          <Pressable>
+            <Text>
+            <Ionicons name="information-circle" size={24} color="white" />
+             Sobre
+            </Text>
+          </Pressable>
+          
         </View>
       </SafeAreaView>
     </>
