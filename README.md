@@ -116,6 +116,10 @@ Depêndencias para navegação:
 
 Mecanismo de navegação: `npm install @react-navigation/native-stack`
 
+#### Configurações
+
+No `App.js` importamos o `NavigationContainer` e o `creatNativeSatckNavigator`, em seguida os configuramos para determinar o `Stack.Screen` e seus componentes correspondentes (no momento, apenes `Home`, `Sobre`, `Privacidade`)
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
