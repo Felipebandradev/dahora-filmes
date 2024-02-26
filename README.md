@@ -104,6 +104,18 @@ Atualmente (Feveireiro/ 2024) a biblioteca mais usadas e considerade padrão é 
 - React Navigation: https://reactnavigation.org
 - Expo Router: https://docs.expo.dev/router/introduction
 
+### Como usar o react navigation com a navegação Stack
+
+#### Pacotes de Instalações
+
+React Navigation: `npm install @react-navigation/native`
+
+Depêndencias para navegação:
+
+`npx expo install react-native-screens react-native-safe-area-context`
+
+Mecanismo de navegação: `npm install @react-navigation/native-stack`
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
