@@ -92,4 +92,24 @@ const estiloSobre = StyleSheet.create({
   },
 });
 
-export { estilosInicio, estilosContainer, estiloSobre };
+const estiloBuscarFilmes = StyleSheet.create({
+  inputText: {
+    height: 40,
+    width: "80%",
+    borderStyle: "solid",
+    borderWidth: 2,
+    margin: 12,
+    padding: 10,
+    borderColor: "#a471f9",
+  },
+  botao: {
+    color: "#a471f9",
+  },
+  buscarInpContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+});
+
+export { estilosInicio, estilosContainer, estiloSobre, estiloBuscarFilmes };

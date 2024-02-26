@@ -1,10 +1,10 @@
-import SafeContainer from "./src/components/SafeContainer";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Home from "./src/screens/Home";
 import Privacidade from "./src/screens/Privacidade";
 import Sobre from "./src/screens/Sobre";
+import BuscarFilmes from "./src/screens/BuscarFilmes";
 
 // Criação e inicialização do mecanismo Stack
 
@@ -32,6 +32,7 @@ export default function App() {
             options={{ title: "Conheça Nosso App" }}
           />
           <Stack.Screen name="Privacidade" component={Privacidade} />
+          <Stack.Screen name="BuscarFilmes" component={BuscarFilmes} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
