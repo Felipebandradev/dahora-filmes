@@ -16,7 +16,7 @@ const estilosInicio = StyleSheet.create({
   titulo: {
     fontFamily: "Monoton-Regular",
     fontSize: 30,
-    color: "#5a51a6",
+    color: "#a471f9",
     textAlign: "center",
   },
   viewBotoes: {
@@ -32,7 +32,7 @@ const estilosInicio = StyleSheet.create({
     // borderStyle: "solid",
     // borderWidth: 2,
     padding: 16,
-    backgroundColor: "#4d4491",
+    backgroundColor: "#a471f9",
     borderRadius: 15,
   },
   textoBotao: {
@@ -49,7 +49,7 @@ const estilosInicio = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "#5a51a6",
+    backgroundColor: "#a361fd",
   },
   botaoRodape: {
     padding: 16,
@@ -81,7 +81,7 @@ const estiloSobre = StyleSheet.create({
   },
   nomeApp: {
     fontWeight: "bold",
-    color: "#5a51a6",
+    color: "#a471f9",
   },
   logo: {
     width: 125,
