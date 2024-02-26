@@ -87,6 +87,12 @@ Exemplo de app nativo multiplataforma criando com React Native e Expo.
   Importação das fontes com auxílio dos hooks useFonts e useCallback.
   Aplicação das fontes usando regras de StyleSheet.
 
+  ## 03-componentes-de-telas
+
+- Criação das telas básicas: Sobre e Privacidade
+- Componente `ScrollView` para conteúdos maiores que a tela com suporte à rolagem
+- Componente `Linking` para criação de link para a web.
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
