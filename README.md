@@ -93,6 +93,17 @@ Exemplo de app nativo multiplataforma criando com React Native e Expo.
 - Componente `ScrollView` para conteúdos maiores que a tela com suporte à rolagem
 - Componente `Linking` para criação de link para a web.
 
+## Branch 04
+
+Para Gerenciar os recursos de navegação é necessário usar uma biblioteca de navegação
+
+As mais conhecidas são as **React Navigation** e a **Expo Router**
+
+Atualmente (Feveireiro/ 2024) a biblioteca mais usadas e considerade padrão é a **React Navigation**
+
+- React Navigation: https://reactnavigation.org
+- Expo Router: https://docs.expo.dev/router/introduction
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
