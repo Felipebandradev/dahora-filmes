@@ -12,7 +12,7 @@ export default function BuscarFilmes() {
       Alert.alert("Você não digitou nada");
       Vibration.vibrate(500);
     } else {
-      Alert.alert("Parabéns você sabe digitar!🤩" + text);
+      Alert.alert("Parabéns você sabe digitar!🤩", `${text}`);
     }
   };
 
