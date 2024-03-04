@@ -4,12 +4,11 @@ import SafeContainer from "../components/SafeContainer";
 import { estiloBuscarFilmes, estiloSobre } from "../stylesheet/estilos";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function BuscarFilmes() {
+export default function BuscarFilmes({ navigation }) {
   const [filme, setFilme] = useState("");
 
   const filmeDigitado = (valorDigitado) => {
     setFilme(valorDigitado);
-    console.log(filme);
   };
   const buscarFilmes = () => {
     /* Avaliando se o state filme não foi dafinido */
@@ -18,7 +17,8 @@ export default function BuscarFilmes() {
       return Alert.alert("Ops!", "Você deve digitar um filme! 🎬");
     }
 
-    return Alert.alert("Você procurou por: ", `${filme}`);
+    /* Redirecionamento para tela de resultados passando o filme para ela  através do segundo parâmetro do método navigate*/
+    navigation.navigate("Resultados", { filme });
   };
 
   return (

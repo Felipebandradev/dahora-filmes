@@ -112,4 +112,17 @@ const estiloBuscarFilmes = StyleSheet.create({
   },
 });
 
-export { estilosInicio, estilosContainer, estiloSobre, estiloBuscarFilmes };
+const estilosResultado = StyleSheet.create({
+  textoNomeFilme: {
+    fontWeight: "bold",
+    color: "#a361fd",
+  },
+});
+
+export {
+  estilosInicio,
+  estilosContainer,
+  estiloSobre,
+  estiloBuscarFilmes,
+  estilosResultado,
+};
