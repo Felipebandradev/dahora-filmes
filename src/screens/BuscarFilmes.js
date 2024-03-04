@@ -15,7 +15,7 @@ export default function BuscarFilmes() {
     /* Avaliando se o state filme não foi dafinido */
     if (!filme) {
       Vibration.vibrate(500);
-      return Alert.alert("Ops!", "Você deve digitar um filme!");
+      return Alert.alert("Ops!", "Você deve digitar um filme! 🎬");
     }
 
     return Alert.alert("Você procurou por: ", `${filme}`);
