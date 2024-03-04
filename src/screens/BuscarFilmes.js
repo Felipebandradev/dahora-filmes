@@ -5,15 +5,20 @@ import { estiloBuscarFilmes, estiloSobre } from "../stylesheet/estilos";
 import { Ionicons } from "@expo/vector-icons";
 
 export default function BuscarFilmes() {
-  const [text, setText] = useState("");
+  const [filme, setFilme] = useState("");
 
-  const pesquisar = () => {
-    if (text === "") {
-      Alert.alert("Você não digitou nada");
+  const filmeDigitado = (valorDigitado) => {
+    setFilme(valorDigitado);
+    console.log(filme);
+  };
+  const buscarFilmes = () => {
+    /* Avaliando se o state filme não foi dafinido */
+    if (!filme) {
       Vibration.vibrate(500);
-    } else {
-      Alert.alert("Parabéns você sabe digitar!🤩", `${text}`);
+      return Alert.alert("Ops!", "Você deve digitar um filme!");
     }
+
+    return Alert.alert("Você procurou por: ", `${filme}`);
   };
 
   return (
@@ -26,15 +31,15 @@ export default function BuscarFilmes() {
             <Ionicons name="film" size={50} color="#a471f9" />
             <TextInput
               style={estiloBuscarFilmes.inputText}
-              onChangeText={(newText) => setText(newText)}
-              defaultValue={text}
-              onSubmitEditing={pesquisar}
+              onChangeText={filmeDigitado}
+              onSubmitEditing={buscarFilmes}
               enterKeyHint="search"
               placeholder="Digite um filme"
               maxLength={40}
+              autoFocus
             />
           </View>
-          <Button color="#a471f9" title="Procurar" onPress={pesquisar} />
+          <Button color="#a471f9" title="Procurar" onPress={buscarFilmes} />
         </View>
       </SafeContainer>
     </>
