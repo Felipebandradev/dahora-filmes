@@ -31,6 +31,7 @@ export default function BuscarFilmes() {
               onSubmitEditing={pesquisar}
               enterKeyHint="search"
               placeholder="Digite um filme"
+              maxLength={40}
             />
           </View>
           <Button color="#a471f9" title="Procurar" onPress={pesquisar} />
