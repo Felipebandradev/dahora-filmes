@@ -7,3 +7,10 @@ API/Services (chamda de baseURL) e configuramos também o uso da API Key */
 foi definida no arquivo .env, para acessa-lo utilizamos
 process.env.NOME_DA_VARIAVEL_DE_AMBIENTE */
 const apiKey = process.env.EXPO_PUBLIC_API_KEY;
+
+/* URL base/padrão para acesso aos endpoins da API */
+const api = axios.create({
+  baseURL: "https://api.themoviedb.org/3",
+});
+
+export { api, apiKey };
