@@ -1,12 +1,4 @@
-import {
-  Alert,
-  Button,
-  StyleSheet,
-  Text,
-  TextInput,
-  Vibration,
-  View,
-} from "react-native";
+import { Alert, Button, Text, TextInput, Vibration, View } from "react-native";
 import React, { useState } from "react";
 import SafeContainer from "../components/SafeContainer";
 import { estiloBuscarFilmes, estiloSobre } from "../stylesheet/estilos";
@@ -47,5 +39,3 @@ export default function BuscarFilmes() {
     </>
   );
 }
-
-const styles = StyleSheet.create({});
