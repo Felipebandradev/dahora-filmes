@@ -139,6 +139,13 @@ No `App.js` importamos o `NavigationContainer` e o `creatNativeSatckNavigator`, 
 - Usar um componente de alerta para validação básica: exibir mensagem na tela caso o usuário toque no botão sem preencher nada no formulário
 - Usar o componente de alerta para mostrar mensagem dizendo "Você procurou pelo filme [mostrar o nome do filme digitado]
 
+### Solução: recursos utilizados
+
+- componete/Recursos nativos: `TextInput`, `Vibration` e `Alert`
+- Eventos:
+  - `onChageText` no `TextInput` para captura em tempo real do nome do filme digitando e atualização no `state` usando a função `filmesDigitado`
+  - `onSubmitEditing` no `TextInput` para acionamento da função `buscarFilmes`
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
