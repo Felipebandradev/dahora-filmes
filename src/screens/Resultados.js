@@ -47,14 +47,14 @@ export default function Resultados({ route }) {
         <View style={estilosResultado.viewFilmes}>
           <FlatList
             data={resultados}
-            /* Extraindo a chave/key de cada registro/item/filme único */
             keyExtractor={(item) => item.id}
-            /* Prop  que ira randerizar cada item/filme em um componente 
-            Pode se utilzar tambem um componente chamado SectionList
-            */
             renderItem={({ item }) => {
               return <CardFilme filme={item} />;
             }}
+            ListEmptyComponent={() => (
+              <Text>Não foi localizado nenhum filme!!😥</Text>
+            )}
+            ItemSeparatorComponent={() => <Text>**********</Text>}
           />
         </View>
       </View>
