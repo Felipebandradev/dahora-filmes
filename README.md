@@ -157,6 +157,11 @@ No `App.js` importamos o `NavigationContainer` e o `creatNativeSatckNavigator`, 
 - Instalação da lib **Axios**
 - Configuração/exportação do `services/api-movidedb.js` contendo a programação básica de acesso à API para uso em diferentes partes do app.
 
+#### Exibição dos Resultados
+
+- Utilização do componente `FlatList` para listagem dinâmica dos resultados
+- Criação do componente `CardFilme` com uso de prop (`filme`) com carregamento do `title` e do `poster-path` (imagem) de cada filme.
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
