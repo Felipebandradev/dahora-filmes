@@ -146,6 +146,17 @@ No `App.js` importamos o `NavigationContainer` e o `creatNativeSatckNavigator`, 
   - `onChageText` no `TextInput` para captura em tempo real do nome do filme digitando e atualização no `state` usando a função `filmesDigitado`
   - `onSubmitEditing` no `TextInput` para acionamento da função `buscarFilmes`
 
+## Branch 06-telas-de-resultados-programação-api
+
+- Cadastro na API TheMovieDB
+- Criação de uma chave de API (API Key)
+- Configuração de varfikável ambiente através do arquivo `.env` contendo a API Key via Expo (arquivo ENV são ignorados no versionamento )
+
+#### Consumo de dados da API
+
+- Instalação da lib **Axios**
+- Configuração/exportação do `services/api-movidedb.js` contendo a programação básica de acesso à API para uso em diferentes partes do app.
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
