@@ -1,10 +1,12 @@
-import { FlatList, Text, View } from "react-native";
+import { ActivityIndicator, FlatList, Text, View } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import { estilosResultado } from "../stylesheet/estilos";
 import { api, apiKey } from "../services/api-moviedb";
 import { useEffect, useState } from "react";
 import CardFilme from "../components/CardFilme";
 import Separador from "../components/Separador";
+import ListaVazia from "../components/ListaVazia";
+import Loading from "../components/Loading";
 
 /* Prop Route
 Prop Especial e definida pelo React Navigation.
@@ -13,6 +15,8 @@ por meio de navegação entre telas. */
 export default function Resultados({ route }) {
   /* State para gerenciar os resultados da busca na API */
   const [resultados, setResultados] = useState([]);
+
+  const [loading, setLoading] = useState(true);
 
   /*  Capturando o parâmetro filme vindo de BuscarFilmes */
   const { filme } = route.params;
@@ -30,6 +34,7 @@ export default function Resultados({ route }) {
         });
         /* Adicionando os resultados ao state */
         setResultados(resposta.data.results);
+        setLoading(false);
       } catch (error) {
         console.error("Deu Ruim: " + error.message);
       }
@@ -45,19 +50,20 @@ export default function Resultados({ route }) {
           <Text style={estilosResultado.textoNomeFilme}> {filme}</Text>
         </Text>
 
-        <View style={estilosResultado.viewFilmes}>
-          <FlatList
-            data={resultados}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => {
-              return <CardFilme filme={item} />;
-            }}
-            ListEmptyComponent={() => (
-              <Text>Não foi localizado nenhum filme!!😥</Text>
-            )}
-            ItemSeparatorComponent={<Separador />}
-          />
-        </View>
+        {loading && <Loading />}
+        {!loading && (
+          <View style={estilosResultado.viewFilmes}>
+            <FlatList
+              data={resultados}
+              keyExtractor={(item) => item.id}
+              renderItem={({ item }) => {
+                return <CardFilme filme={item} />;
+              }}
+              ListEmptyComponent={<ListaVazia pesquisado={filme} />}
+              ItemSeparatorComponent={<Separador />}
+            />
+          </View>
+        )}
       </View>
     </SafeContainer>
   );

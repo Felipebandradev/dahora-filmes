@@ -176,6 +176,28 @@ const estiloSeparador = StyleSheet.create({
   },
 });
 
+const estilosListaVazia = StyleSheet.create({
+  imagem: {
+    height: 350,
+    width: 350,
+    alignSelf: "center",
+  },
+  filmePesquisado: {
+    color: "#ff81a4",
+    textTransform: "uppercase",
+    fontWeight: "bold",
+    margin: 1,
+  },
+});
+
+const estilosLoading = StyleSheet.create({
+  viewLoading: {
+    alignItems: "center",
+    flex: 1,
+    justifyContent: "center",
+  },
+});
+
 export {
   estilosInicio,
   estilosContainer,
@@ -184,4 +206,6 @@ export {
   estilosResultado,
   estiloCardFilme,
   estiloSeparador,
+  estilosListaVazia,
+  estilosLoading,
 };
