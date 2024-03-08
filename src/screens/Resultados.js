@@ -4,6 +4,7 @@ import { estilosResultado } from "../stylesheet/estilos";
 import { api, apiKey } from "../services/api-moviedb";
 import { useEffect, useState } from "react";
 import CardFilme from "../components/CardFilme";
+import Separador from "../components/Separador";
 
 /* Prop Route
 Prop Especial e definida pelo React Navigation.
@@ -54,7 +55,7 @@ export default function Resultados({ route }) {
             ListEmptyComponent={() => (
               <Text>Não foi localizado nenhum filme!!😥</Text>
             )}
-            ItemSeparatorComponent={() => <Text>**********</Text>}
+            ItemSeparatorComponent={<Separador />}
           />
         </View>
       </View>

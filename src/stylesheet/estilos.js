@@ -168,6 +168,14 @@ const estiloCardFilme = StyleSheet.create({
   },
 });
 
+const estiloSeparador = StyleSheet.create({
+  viewSeparador: {
+    marginVertical: 8,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+  },
+});
+
 export {
   estilosInicio,
   estilosContainer,
@@ -175,4 +183,5 @@ export {
   estiloBuscarFilmes,
   estilosResultado,
   estiloCardFilme,
+  estiloSeparador,
 };
