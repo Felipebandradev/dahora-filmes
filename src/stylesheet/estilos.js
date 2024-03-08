@@ -137,7 +137,7 @@ const estiloCardFilme = StyleSheet.create({
     alignItems: "center",
   },
   imagem: {
-    height: 150,
+    height: 165,
     width: 100,
     flex: 1,
   },
@@ -157,6 +157,8 @@ const estiloCardFilme = StyleSheet.create({
   botao: {
     borderColor: "#a361fd",
     borderWidth: 1,
+    padding: 8,
+    borderRadius: 15,
     padding: 8,
   },
   textoBotao: {
