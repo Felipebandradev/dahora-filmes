@@ -1,6 +1,6 @@
-import { Text, View } from "react-native";
+import { FlatList, Text, View } from "react-native";
 import SafeContainer from "../components/SafeContainer";
-import { estiloSobre, estilosResultado } from "../stylesheet/estilos";
+import { estilosResultado } from "../stylesheet/estilos";
 import { api, apiKey } from "../services/api-moviedb";
 import { useEffect, useState } from "react";
 
@@ -26,7 +26,8 @@ export default function Resultados({ route }) {
             api_key: apiKey,
           },
         });
-        console.log(resposta.data);
+        /* Adicionando os resultados ao state */
+        setResultados(resposta.data.results);
       } catch (error) {
         console.error("Deu Ruim: " + error.message);
       }
@@ -36,11 +37,29 @@ export default function Resultados({ route }) {
 
   return (
     <SafeContainer>
-      <View style={estiloSobre.subContainer}>
+      <View style={estilosResultado.subContainer}>
         <Text style={estilosResultado.texto}>
           Você buscou por:
-          <Text style={estilosResultado.textoNomeFilme}> {filme}</Text>{" "}
+          <Text style={estilosResultado.textoNomeFilme}> {filme}</Text>
         </Text>
+
+        <View style={estilosResultado.viewFilmes}>
+          <FlatList
+            data={resultados}
+            /* Extraindo a chave/key de cada registro/item/filme único */
+            keyExtractor={(item) => item.id}
+            /* Prop  que ira randerizar cada item/filme em um componente 
+            Pode se utilzar tambem um componente chamado SectionList
+            */
+            renderItem={({ item }) => {
+              return (
+                <>
+                  <Text>{item.title}</Text>
+                </>
+              );
+            }}
+          />
+        </View>
       </View>
     </SafeContainer>
   );

@@ -117,6 +117,14 @@ const estilosResultado = StyleSheet.create({
     fontWeight: "bold",
     color: "#a361fd",
   },
+  viewFilmes: {
+    marginVertical: 8,
+  },
+  subContainer: {
+    flex: 1,
+    padding: 16,
+    width: "100%",
+  },
 });
 
 export {
