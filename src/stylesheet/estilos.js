@@ -127,10 +127,50 @@ const estilosResultado = StyleSheet.create({
   },
 });
 
+const estiloCardFilme = StyleSheet.create({
+  card: {
+    marginVertical: 8,
+    flexDirection: "row",
+    borderWidth: 2,
+    borderColor: "#a361fd",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  imagem: {
+    height: 150,
+    width: 100,
+    flex: 1,
+  },
+  corpo: { flex: 2 },
+  titulo: {
+    backgroundColor: "#a471f9",
+    color: "#f7f7f7",
+    textAlign: "center",
+    paddingVertical: 8,
+    fontSize: 16,
+  },
+  botoes: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    marginTop: 8,
+  },
+  botao: {
+    borderColor: "#a361fd",
+    borderWidth: 1,
+    padding: 8,
+  },
+  textoBotao: {
+    color: "#a471f9",
+    fontSize: 12,
+    textTransform: "uppercase",
+  },
+});
+
 export {
   estilosInicio,
   estilosContainer,
   estiloSobre,
   estiloBuscarFilmes,
   estilosResultado,
+  estiloCardFilme,
 };

@@ -3,6 +3,7 @@ import SafeContainer from "../components/SafeContainer";
 import { estilosResultado } from "../stylesheet/estilos";
 import { api, apiKey } from "../services/api-moviedb";
 import { useEffect, useState } from "react";
+import CardFilme from "../components/CardFilme";
 
 /* Prop Route
 Prop Especial e definida pelo React Navigation.
@@ -52,11 +53,7 @@ export default function Resultados({ route }) {
             Pode se utilzar tambem um componente chamado SectionList
             */
             renderItem={({ item }) => {
-              return (
-                <>
-                  <Text>{item.title}</Text>
-                </>
-              );
+              return <CardFilme filme={item} />;
             }}
           />
         </View>
