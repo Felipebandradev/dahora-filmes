@@ -204,6 +204,8 @@ const estilosLoading = StyleSheet.create({
   },
 });
 
+const estiloDetalhes = StyleSheet.create({});
+
 export {
   estilosInicio,
   estilosContainer,
@@ -214,4 +216,5 @@ export {
   estiloSeparador,
   estilosListaVazia,
   estilosLoading,
+  estiloDetalhes,
 };

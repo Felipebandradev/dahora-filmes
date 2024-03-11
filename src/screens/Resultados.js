@@ -1,4 +1,4 @@
-import { ActivityIndicator, FlatList, Text, View } from "react-native";
+import { FlatList, Text, View } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import { estilosResultado } from "../stylesheet/estilos";
 import { api, apiKey } from "../services/api-moviedb";
