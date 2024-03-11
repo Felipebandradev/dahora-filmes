@@ -214,25 +214,31 @@ const estiloDetalhes = StyleSheet.create({
     width: "100%",
   },
   imagemFundo: {
-    height: 200,
+    height: 235,
     justifyContent: "center",
+    flex: 0.8,
+    marginBottom: 8,
   },
   titulo: {
-    backgroundColor: "rgba(0,0,0,0.75)",
+    backgroundColor: "#a471f9",
     color: "#f7f7f7",
     fontFamily: "NotoSans",
     fontSize: 16,
     fontWeight: "bold",
     textAlign: "center",
     padding: 12,
+    marginVertical: 4,
+    borderRadius: 15,
   },
   conteudo: {
     padding: 8,
     flex: 1,
+    marginVertical: 8,
   },
   texto: {
     paddingVertical: 4,
     fontSize: 16,
+    margin: 8,
   },
   infos: {
     flexDirection: "row",
@@ -247,6 +253,13 @@ const estiloDetalhes = StyleSheet.create({
   },
   descricao: {
     color: "gray",
+  },
+  imagem: {
+    height: 365,
+    width: 300,
+    flex: 1,
+    alignSelf: "center",
+    marginTop: 8,
   },
 });
 
