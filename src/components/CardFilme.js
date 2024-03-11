@@ -34,7 +34,7 @@ export default function CardFilme({ filme }) {
           <Pressable
             style={estiloCardFilme.botao}
             onPress={() => {
-              navigation.navigate("Detalhes");
+              navigation.navigate("Detalhes", { filme });
             }}
           >
             <View style={estiloCardFilme.botaoIcon}>
