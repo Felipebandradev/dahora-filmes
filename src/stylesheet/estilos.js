@@ -166,6 +166,12 @@ const estiloCardFilme = StyleSheet.create({
     fontSize: 12,
     textTransform: "uppercase",
   },
+  botaoIcon: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    gap: 8,
+  },
 });
 
 const estiloSeparador = StyleSheet.create({

@@ -162,6 +162,13 @@ No `App.js` importamos o `NavigationContainer` e o `creatNativeSatckNavigator`, 
 - Utilização do componente `FlatList` para listagem dinâmica dos resultados
 - Criação do componente `CardFilme` com uso de prop (`filme`) com carregamento do `title` e do `poster-path` (imagem) de cada filme.
 
+## Branch 07-melhorias-nos-resultados
+
+- Loading usando `ActivityIndicator`
+- Em `Resultados`, aplicamos à `FlatList` componentes personalizados para o caso de não haver filmes na busca (`NaoEncontrado/ListEmptyComponent`) e para separar cada elemento da `FlatList` (`Separador/ItemSeparatorComponent`)
+- Em `CardFilme` colocamos uma condicional para o carregamento de imagem alternativa caso algum filme não tenha imagem, e também ícones nos botões.
+  tem menu de contexto
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
