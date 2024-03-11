@@ -63,6 +63,10 @@ const estilosContainer = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  subContainer: {
+    flex: 1,
+    padding: 16,
+  },
 });
 
 const estiloSobre = StyleSheet.create({
@@ -204,7 +208,47 @@ const estilosLoading = StyleSheet.create({
   },
 });
 
-const estiloDetalhes = StyleSheet.create({});
+const estiloDetalhes = StyleSheet.create({
+  subContainer: {
+    flex: 1,
+    width: "100%",
+  },
+  imagemFundo: {
+    height: 200,
+    justifyContent: "center",
+  },
+  titulo: {
+    backgroundColor: "rgba(0,0,0,0.75)",
+    color: "#f7f7f7",
+    fontFamily: "NotoSans",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+    padding: 12,
+  },
+  conteudo: {
+    padding: 8,
+    flex: 1,
+  },
+  texto: {
+    paddingVertical: 4,
+    fontSize: 16,
+  },
+  infos: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+  },
+  avalicao: {
+    color: "red",
+  },
+  lancamento: {
+    color: "darkblue",
+  },
+  descricao: {
+    color: "gray",
+  },
+});
 
 export {
   estilosInicio,
