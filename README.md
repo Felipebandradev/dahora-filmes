@@ -169,6 +169,11 @@ No `App.js` importamos o `NavigationContainer` e o `creatNativeSatckNavigator`, 
 - Em `CardFilme` colocamos uma condicional para o carregamento de imagem alternativa caso algum filme não tenha imagem, e também ícones nos botões.
   tem menu de contexto
 
+  ## Branch 08-tela-de-detaçhes-do-filme
+
+  - Criação de tela `Detalhes.js` e edição dela à `stack` em `App.js`
+  - Em `CardFilme`, utilização do hook ` useNavigation` para funcionalidade de navegação do botão **Leia Mais**
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
