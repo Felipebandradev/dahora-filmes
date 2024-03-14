@@ -1,5 +1,5 @@
 /* Atalho: rnfs;*/
-import { Alert, Image, Pressable, Text, View } from "react-native";
+import { Alert, Image, Pressable, Text, Vibration, View } from "react-native";
 import React from "react";
 import { estiloCardFilme } from "../stylesheet/estilos";
 import imagemAlt from "../../assets/images/foto-alternativa.jpg";
@@ -35,7 +35,16 @@ export default function CardFilme({ filme }) {
         // True or False
       });
 
-      /* 4) se o filme não estiver na lista, então colocalo */
+      /* 4) Verificação , altere e registra o filme */
+      /*  4.1) Se ja tem filme, avisaremos ao usuário */
+      if (jaTemFilme) {
+        Alert.alert("Ops!", "Você já salvou esse filme");
+        Vibration.vibrate(300);
+        return;
+      }
+      /*  4.2) Se não, vamos  colocar na lista */
+      listaDeFilmes.push(filme);
+
       /* 5) usar o asyncStorage para gravar no armazenamento offline do dispositivo  */
     } catch (error) {
       console.log("Deu ruim: " + error);
