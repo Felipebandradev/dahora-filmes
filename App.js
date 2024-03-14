@@ -9,6 +9,7 @@ import Resultados from "./src/screens/Resultados";
 import Detalhes from "./src/screens/Detalhes";
 import { Button, Pressable, Text } from "react-native";
 import { estilosAppBotao } from "./src/stylesheet/estilos";
+import Favoritos from "./src/screens/Favoritos";
 
 // Criação e inicialização do mecanismo Stack
 
@@ -65,6 +66,8 @@ export default function App() {
               };
             }}
           />
+
+          <Stack.Screen name="Favoritos" component={Favoritos} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

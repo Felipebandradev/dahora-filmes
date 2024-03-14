@@ -176,6 +176,12 @@ No `App.js` importamos o `NavigationContainer` e o `creatNativeSatckNavigator`, 
 
   - Em `App.js` na `Stack.Screen Detalhes`, adicionamos uma prop `options` configurada para exibir um `Pressable` ou `Button` responsável por permitir a navegação direta para `Home`
 
+  ## Branch 09-gerenciamento-de-favoritos
+
+### Recurso nativo/lib: AsyncStorage
+
+`AsyncStorage` é uma lib mantida pela equipe de Expo que permite armazenar dados **offline** em formato `string` no dispositivo do usuário. é uma lib semelhante á API web `localStorage` usa em sites.
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes

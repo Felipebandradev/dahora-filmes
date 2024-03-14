@@ -274,6 +274,16 @@ const estilosAppBotao = StyleSheet.create({
     fontSize: 16,
   },
 });
+const estilosFavoritos = StyleSheet.create({
+  subContainer: {
+    flex: 1,
+    padding: 16,
+    width: "100%",
+  },
+  texto: {
+    marginVertical: 8,
+  },
+});
 
 export {
   estilosInicio,
@@ -287,4 +297,5 @@ export {
   estilosLoading,
   estiloDetalhes,
   estilosAppBotao,
+  estilosFavoritos,
 };
