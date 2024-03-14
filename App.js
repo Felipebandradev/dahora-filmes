@@ -7,6 +7,8 @@ import Sobre from "./src/screens/Sobre";
 import BuscarFilmes from "./src/screens/BuscarFilmes";
 import Resultados from "./src/screens/Resultados";
 import Detalhes from "./src/screens/Detalhes";
+import { Button, Pressable, Text } from "react-native";
+import { estilosAppBotao } from "./src/stylesheet/estilos";
 
 // Criação e inicialização do mecanismo Stack
 
@@ -45,7 +47,24 @@ export default function App() {
             component={Resultados}
             options={{ title: "Filmes" }}
           />
-          <Stack.Screen name="Detalhes" component={Detalhes} />
+          <Stack.Screen
+            name="Detalhes"
+            component={Detalhes}
+            options={({ navigation }) => {
+              return {
+                headerRight: () => (
+                  <Pressable
+                    style={estilosAppBotao.botao}
+                    onPress={() => {
+                      navigation.navigate("Home");
+                    }}
+                  >
+                    <Text style={estilosAppBotao.textoPressable}> Home</Text>
+                  </Pressable>
+                ),
+              };
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>

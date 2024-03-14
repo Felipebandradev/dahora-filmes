@@ -263,6 +263,18 @@ const estiloDetalhes = StyleSheet.create({
   },
 });
 
+const estilosAppBotao = StyleSheet.create({
+  botao: {
+    margin: 16,
+    padding: 4,
+  },
+  textoPressable: {
+    color: "#fafafa",
+    fontWeight: "bold",
+    fontSize: 16,
+  },
+});
+
 export {
   estilosInicio,
   estilosContainer,
@@ -274,4 +286,5 @@ export {
   estilosListaVazia,
   estilosLoading,
   estiloDetalhes,
+  estilosAppBotao,
 };

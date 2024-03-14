@@ -21,6 +21,8 @@ export default function Detalhes({ route }) {
     return `${dia}/${mes}/${ano}`;
   };
 
+  console.log(filme);
+
   return (
     <SafeContainer>
       <View style={estiloDetalhes.subContainer}>
