@@ -1,8 +1,10 @@
-import { Text, View, Pressable, ScrollView } from "react-native";
+import { Text, View, Pressable, ScrollView, Image } from "react-native";
 import SafeContainer from "../components/SafeContainer";
-import { estilosFavoritos } from "../stylesheet/estilos";
+import { estiloCardFilme, estilosFavoritos } from "../stylesheet/estilos";
 import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Ionicons } from "@expo/vector-icons";
+import imagemAlt from "../../assets/images/foto-alternativa.jpg";
 
 export default function Favoritos() {
   /* State para carregar dasdos do AsyncStorage */
@@ -12,7 +14,10 @@ export default function Favoritos() {
   useEffect(() => {
     const carregarFavoritos = async () => {
       try {
+        /* Acessamos o storage criando previamente e guardamos as strings */
         const dados = await AsyncStorage.getItem("@favoritosbarbosa");
+
+        /* Se houver dados convertemos as strings em objetos e atualizamos o State */
         if (dados) {
           setListaFavoritos(JSON.parse(dados));
         }
@@ -33,8 +38,45 @@ export default function Favoritos() {
     <SafeContainer>
       <View style={estilosFavoritos.subContainer}>
         <View style={estilosFavoritos.viewFavoritos}>
-          <Text style={estilosFavoritos.texto}>Favoritos</Text>
+          <Text style={estilosFavoritos.texto}>
+            Quantidade: {listaFavoritos.length}
+          </Text>
+          <Pressable style={estilosFavoritos.botao}>
+            <Text style={estilosFavoritos.textoBotao}>
+              <Ionicons name="trash" size={16} color="black" /> Excluir
+              Favoritos
+            </Text>
+          </Pressable>
         </View>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {listaFavoritos.map((filme) => {
+            return (
+              <View key={filme.id} style={estilosFavoritos.cardFavorito}>
+                <Pressable style={estilosFavoritos.filmeFavorito}>
+                  <View style={estilosFavoritos.dentroBotao}>
+                    <Image
+                      resizeMode="contain"
+                      style={estilosFavoritos.imagem}
+                      source={
+                        filme.poster_path
+                          ? {
+                              uri: `https://image.tmdb.org/t/p/w500/${filme.poster_path}`,
+                            }
+                          : imagemAlt
+                      }
+                    />
+                    <Text style={estilosFavoritos.cardTitulo}>
+                      {filme.title}
+                    </Text>
+                  </View>
+                </Pressable>
+                <Pressable style={estilosFavoritos.excluir}>
+                  <Ionicons name="trash" size={20} color="black" />
+                </Pressable>
+              </View>
+            );
+          })}
+        </ScrollView>
       </View>
     </SafeContainer>
   );

@@ -283,6 +283,27 @@ const estilosFavoritos = StyleSheet.create({
   texto: {
     marginVertical: 8,
   },
+  botao: {},
+  textoBotao: {},
+  imagem: {
+    height: 170,
+    width: 110,
+    flex: 1,
+    alignSelf: "center",
+  },
+  cardFavorito: {},
+  filmeFavorito: {},
+  cardTitulo: {
+    width: 300,
+    margin: 8,
+    textAlign: "center",
+    alignSelf: "center",
+  },
+  excluir: {},
+  dentroBotao: {},
+  viewFavoritos: {
+    flexDirection: "row",
+  },
 });
 
 export {
