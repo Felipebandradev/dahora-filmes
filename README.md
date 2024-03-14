@@ -182,6 +182,9 @@ No `App.js` importamos o `NavigationContainer` e o `creatNativeSatckNavigator`, 
 
 `AsyncStorage` é uma lib mantida pela equipe de Expo que permite armazenar dados **offline** em formato `string` no dispositivo do usuário. é uma lib semelhante á API web `localStorage` usa em sites.
 
+Link da Instalação: `https://docs.expo.dev/versions/latest/sdk/async-storage/`
+Link da Documentação: `https://react-native-async-storage.github.io/async-storage/docs/usage`
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
