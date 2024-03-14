@@ -1,5 +1,5 @@
 /* Atalho: rnfs;*/
-import { Image, Pressable, Text, View } from "react-native";
+import { Alert, Image, Pressable, Text, View } from "react-native";
 import React from "react";
 import { estiloCardFilme } from "../stylesheet/estilos";
 import imagemAlt from "../../assets/images/foto-alternativa.jpg";
@@ -13,6 +13,24 @@ export default function CardFilme({ filme }) {
 
   /*  Acessar resucursos de navegação */
   const navigation = useNavigation();
+
+  /* Criando a função de salvar um filme */
+  const salvar = async () => {
+    // Alert.alert("Favoritos", "Salvando...");
+
+    try {
+      /*  1) Verificar/carregar os favoritos armazanados no AsyncStorage */
+      /*  2) Verificar/criar uma lista de filmes favoritos (dados) */
+      /* 3) Verificar se ja tem algum filme na lista para evitar de ter mais de um filme salvo
+      na lista de favoritos */
+      /* 4) se o filme não estiver na lista, então colocalo */
+      /* 5) usar o asyncStorage para gravar no armazenamento offline do dispositivo  */
+    } catch (error) {
+      console.log("Deu ruim: " + error);
+
+      Alert.alert("Erro", "erro aou salvar o filme");
+    }
+  };
 
   return (
     <View style={estiloCardFilme.card}>
@@ -43,7 +61,7 @@ export default function CardFilme({ filme }) {
             </View>
           </Pressable>
 
-          <Pressable style={estiloCardFilme.botao}>
+          <Pressable style={estiloCardFilme.botao} onPress={salvar}>
             <View style={estiloCardFilme.botaoIcon}>
               <Ionicons name="add-circle" size={18} color="#a471f9" />
               <Text style={estiloCardFilme.textoBotao}>Salvar</Text>
