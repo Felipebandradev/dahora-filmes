@@ -174,6 +174,8 @@ No `App.js` importamos o `NavigationContainer` e o `creatNativeSatckNavigator`, 
   - Criação de tela `Detalhes.js` e edição dela à `stack` em `App.js`
   - Em `CardFilme`, utilização do hook ` useNavigation` para funcionalidade de navegação do botão **Leia Mais**
 
+  - Em `App.js` na `Stack.Screen Detalhes`, adicionamos uma prop `options` configurada para exibir um `Pressable` ou `Button` responsável por permitir a navegação direta para `Home`
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
