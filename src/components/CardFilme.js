@@ -17,8 +17,6 @@ export default function CardFilme({ filme }) {
 
   /* Criando a função de salvar um filme */
   const salvar = async () => {
-    // Alert.alert("Favoritos", "Salvando...");
-
     try {
       /*  1) Verificar/carregar os favoritos armazanados no AsyncStorage.
       Usamos o getItem do AsyncStorage para analisar se existe um armazenamento com o nome indicado (@favoritosBarbosa). Se não Existir, será criado posteriormente */
@@ -46,6 +44,11 @@ export default function CardFilme({ filme }) {
       listaDeFilmes.push(filme);
 
       /* 5) usar o asyncStorage para gravar no armazenamento offline do dispositivo  */
+      await AsyncStorage.setItem(
+        "@favoritosBarbosa",
+        JSON.stringify(listaDeFilmes)
+      );
+      Alert.alert("Favoritos", `Filme: ${title} salvo com sucesso!!`);
     } catch (error) {
       console.log("Deu ruim: " + error);
 
