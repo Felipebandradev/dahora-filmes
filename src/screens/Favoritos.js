@@ -1,12 +1,12 @@
 import { Text, View, Pressable, ScrollView, Image } from "react-native";
 import SafeContainer from "../components/SafeContainer";
-import { estiloCardFilme, estilosFavoritos } from "../stylesheet/estilos";
+import { estilosFavoritos } from "../stylesheet/estilos";
 import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Ionicons } from "@expo/vector-icons";
 import imagemAlt from "../../assets/images/foto-alternativa.jpg";
 
-export default function Favoritos() {
+export default function Favoritos({ navigation }) {
   /* State para carregar dasdos do AsyncStorage */
   const [listaFavoritos, setListaFavoritos] = useState([]);
 
@@ -43,8 +43,7 @@ export default function Favoritos() {
           </Text>
           <Pressable style={estilosFavoritos.botao}>
             <Text style={estilosFavoritos.textoBotao}>
-              <Ionicons name="trash" size={16} color="black" /> Excluir
-              Favoritos
+              <Ionicons name="trash" size={16} color="red" /> Excluir Favoritos
             </Text>
           </Pressable>
         </View>
@@ -52,7 +51,12 @@ export default function Favoritos() {
           {listaFavoritos.map((filme) => {
             return (
               <View key={filme.id} style={estilosFavoritos.cardFavorito}>
-                <Pressable style={estilosFavoritos.filmeFavorito}>
+                <Pressable
+                  style={estilosFavoritos.filmeFavorito}
+                  onPress={() => {
+                    navigation.navigate("Detalhes", { filme });
+                  }}
+                >
                   <View style={estilosFavoritos.dentroBotao}>
                     <Image
                       resizeMode="contain"
@@ -71,7 +75,10 @@ export default function Favoritos() {
                   </View>
                 </Pressable>
                 <Pressable style={estilosFavoritos.excluir}>
-                  <Ionicons name="trash" size={20} color="black" />
+                  <Ionicons name="trash" size={20} color="white" />
+                  <Text style={estilosFavoritos.textoExcluir}>
+                    Excluir dos favoritos
+                  </Text>
                 </Pressable>
               </View>
             );

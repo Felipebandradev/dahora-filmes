@@ -283,7 +283,12 @@ const estilosFavoritos = StyleSheet.create({
   texto: {
     marginVertical: 8,
   },
-  botao: {},
+  botao: {
+    borderWidth: 1,
+    borderColor: "red",
+    padding: 8,
+    borderRadius: 4,
+  },
   textoBotao: {},
   imagem: {
     height: 170,
@@ -299,10 +304,19 @@ const estilosFavoritos = StyleSheet.create({
     textAlign: "center",
     alignSelf: "center",
   },
-  excluir: {},
+  excluir: {
+    backgroundColor: "darkred",
+    padding: 8,
+    borderRadius: 4,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+  },
   dentroBotao: {},
   viewFavoritos: {
     flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 8,
   },
 });
 
