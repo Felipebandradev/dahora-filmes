@@ -44,6 +44,13 @@ export default function Favoritos({ navigation }) {
         {
           text: "Sim, sem dó",
           style: "destructive", // estilo somente irá funcionar em ios
+          onPress: async () => {
+            /* Removemos nosso storage de favoritos  */
+            await AsyncStorage.removeItem("@favoritosbarbosa");
+
+            /* E atualizamos o state para que sejam removidos da tela */
+            setListaFavoritos([]);
+          },
         },
       ]
     );
@@ -75,22 +82,18 @@ export default function Favoritos({ navigation }) {
                     navigation.navigate("Detalhes", { filme });
                   }}
                 >
-                  <View style={estilosFavoritos.dentroBotao}>
-                    <Image
-                      resizeMode="contain"
-                      style={estilosFavoritos.imagem}
-                      source={
-                        filme.poster_path
-                          ? {
-                              uri: `https://image.tmdb.org/t/p/w500/${filme.poster_path}`,
-                            }
-                          : imagemAlt
-                      }
-                    />
-                    <Text style={estilosFavoritos.cardTitulo}>
-                      {filme.title}
-                    </Text>
-                  </View>
+                  <Image
+                    resizeMode="contain"
+                    style={estilosFavoritos.imagem}
+                    source={
+                      filme.poster_path
+                        ? {
+                            uri: `https://image.tmdb.org/t/p/w500/${filme.poster_path}`,
+                          }
+                        : imagemAlt
+                    }
+                  />
+                  <Text style={estilosFavoritos.cardTitulo}>{filme.title}</Text>
                 </Pressable>
                 <Pressable style={estilosFavoritos.excluir}>
                   <Ionicons name="trash" size={20} color="white" />
