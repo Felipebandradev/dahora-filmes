@@ -289,14 +289,23 @@ const estilosFavoritos = StyleSheet.create({
     padding: 8,
     borderRadius: 4,
   },
-  textoBotao: {},
+  textoBotao: {
+    color: "red",
+  },
   imagem: {
     height: 170,
     width: 110,
-    flex: 1,
     alignSelf: "center",
   },
-  cardFavorito: {},
+  cardFavorito: {
+    padding: 8,
+    justifyContent: "space-between",
+    backgroundColor: "#eee8fc",
+    marginBottom: 8,
+    borderRadius: 4,
+    alignItems: "center",
+    flex: 1,
+  },
   filmeFavorito: {},
   cardTitulo: {
     width: 300,
@@ -306,12 +315,14 @@ const estilosFavoritos = StyleSheet.create({
   },
   excluir: {
     backgroundColor: "darkred",
-    padding: 8,
+    padding: 12,
     borderRadius: 4,
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
   },
-  dentroBotao: {},
+  textoExcluir: {
+    color: "#f7f7f7",
+  },
   viewFavoritos: {
     flexDirection: "row",
     justifyContent: "space-between",

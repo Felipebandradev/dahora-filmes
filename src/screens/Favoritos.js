@@ -1,4 +1,4 @@
-import { Text, View, Pressable, ScrollView, Image } from "react-native";
+import { Text, View, Pressable, ScrollView, Image, Alert } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import { estilosFavoritos } from "../stylesheet/estilos";
 import { useEffect, useState } from "react";
@@ -32,7 +32,22 @@ export default function Favoritos({ navigation }) {
     carregarFavoritos();
   }, []);
 
-  console.log(listaFavoritos);
+  const excluirTodosFavoritos = async () => {
+    Alert.alert(
+      "Excluir Todos?",
+      "Tem certeza que deseja excluir todos os favoritos?",
+      [
+        {
+          text: "Cancelar",
+          style: "cancel", // verificar, estilo somente irá funcionar em ios
+        },
+        {
+          text: "Sim, sem dó",
+          style: "destructive", // estilo somente irá funcionar em ios
+        },
+      ]
+    );
+  };
 
   return (
     <SafeContainer>
@@ -41,7 +56,10 @@ export default function Favoritos({ navigation }) {
           <Text style={estilosFavoritos.texto}>
             Quantidade: {listaFavoritos.length}
           </Text>
-          <Pressable style={estilosFavoritos.botao}>
+          <Pressable
+            style={estilosFavoritos.botao}
+            onPress={excluirTodosFavoritos}
+          >
             <Text style={estilosFavoritos.textoBotao}>
               <Ionicons name="trash" size={16} color="red" /> Excluir Favoritos
             </Text>
