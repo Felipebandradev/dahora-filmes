@@ -1,4 +1,12 @@
-import { Text, View, Pressable, ScrollView, Image, Alert } from "react-native";
+import {
+  Text,
+  View,
+  Pressable,
+  ScrollView,
+  Image,
+  Alert,
+  Vibration,
+} from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import { estilosFavoritos } from "../stylesheet/estilos";
 import { useEffect, useState } from "react";
@@ -56,6 +64,34 @@ export default function Favoritos({ navigation }) {
     );
   };
 
+  const excluirUm = async (filmeId) => {
+    Alert.alert(
+      "Excluir esse filme",
+      "Tem certeza que deseja excluir  dos favoritos?",
+      [
+        {
+          text: "Cancelar",
+          style: "cancel", // verificar, estilo somente irá funcionar em ios
+        },
+        {
+          text: "Sim, sem dó",
+          style: "destructive", // estilo somente irá funcionar em ios
+          onPress: async () => {
+            const novosFav = listaFavoritos.filter(
+              (filme) => filme.id !== filmeId
+            );
+
+            await AsyncStorage.setItem(
+              "@favoritosbarbosa",
+              JSON.stringify(novosFav)
+            );
+            setListaFavoritos(novosFav);
+          },
+        },
+      ]
+    );
+  };
+
   return (
     <SafeContainer>
       <View style={estilosFavoritos.subContainer}>
@@ -99,7 +135,10 @@ export default function Favoritos({ navigation }) {
                   />
                   <Text style={estilosFavoritos.cardTitulo}>{filme.title}</Text>
                 </Pressable>
-                <Pressable style={estilosFavoritos.excluir}>
+                <Pressable
+                  style={estilosFavoritos.excluir}
+                  onPress={() => excluirUm(filme.id)}
+                >
                   <Ionicons name="trash" size={20} color="white" />
                   <Text style={estilosFavoritos.textoExcluir}>
                     Excluir dos favoritos
