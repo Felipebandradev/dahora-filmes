@@ -64,10 +64,10 @@ export default function Favoritos({ navigation }) {
     );
   };
 
-  const excluirUm = async (filmeId) => {
+  const excluirUm = async (filmeId, FilmeTitulo) => {
     Alert.alert(
-      "Excluir esse filme",
-      "Tem certeza que deseja excluir  dos favoritos?",
+      "Excluir ",
+      "Tem certeza que deseja excluir " + FilmeTitulo + " dos favoritos?",
       [
         {
           text: "Cancelar",
@@ -77,15 +77,20 @@ export default function Favoritos({ navigation }) {
           text: "Sim, sem dó",
           style: "destructive", // estilo somente irá funcionar em ios
           onPress: async () => {
+            /* Gerando uma nova lista de filmes EXCETO o que vai ser removido */
             const novosFav = listaFavoritos.filter(
               (filme) => filme.id !== filmeId
             );
 
+            /* Atualizando o Storage com os dados nova lista de favoritos sem o filme excluido */
             await AsyncStorage.setItem(
               "@favoritosbarbosa",
               JSON.stringify(novosFav)
             );
+
+            /* Atualizaar o state sem como os dados da nova lista SEM o filme ser removido */
             setListaFavoritos(novosFav);
+            Vibration.vibrate(300);
           },
         },
       ]
@@ -137,7 +142,7 @@ export default function Favoritos({ navigation }) {
                 </Pressable>
                 <Pressable
                   style={estilosFavoritos.excluir}
-                  onPress={() => excluirUm(filme.id)}
+                  onPress={() => excluirUm(filme.id, filme.title)}
                 >
                   <Ionicons name="trash" size={20} color="white" />
                   <Text style={estilosFavoritos.textoExcluir}>
