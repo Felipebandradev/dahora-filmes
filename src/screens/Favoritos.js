@@ -77,20 +77,25 @@ export default function Favoritos({ navigation }) {
           text: "Sim, sem dó",
           style: "destructive", // estilo somente irá funcionar em ios
           onPress: async () => {
-            /* Gerando uma nova lista de filmes EXCETO o que vai ser removido */
-            const novosFav = listaFavoritos.filter(
-              (filme) => filme.id !== filmeId
-            );
+            try {
+              /* Gerando uma nova lista de filmes EXCETO o que vai ser removido */
+              const novosFav = listaFavoritos.filter(
+                (filme) => filme.id !== filmeId
+              );
 
-            /* Atualizando o Storage com os dados nova lista de favoritos sem o filme excluido */
-            await AsyncStorage.setItem(
-              "@favoritosbarbosa",
-              JSON.stringify(novosFav)
-            );
+              /* Atualizando o Storage com os dados nova lista de favoritos sem o filme excluido */
+              await AsyncStorage.setItem(
+                "@favoritosbarbosa",
+                JSON.stringify(novosFav)
+              );
 
-            /* Atualizaar o state sem como os dados da nova lista SEM o filme ser removido */
-            setListaFavoritos(novosFav);
-            Vibration.vibrate(300);
+              /* Atualizaar o state sem como os dados da nova lista SEM o filme ser removido */
+              setListaFavoritos(novosFav);
+
+              Vibration.vibrate(300);
+            } catch (error) {
+              console.log("Erro ao Excluir: ", error);
+            }
           },
         },
       ]
