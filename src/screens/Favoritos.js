@@ -63,14 +63,18 @@ export default function Favoritos({ navigation }) {
           <Text style={estilosFavoritos.texto}>
             Quantidade: {listaFavoritos.length}
           </Text>
-          <Pressable
-            style={estilosFavoritos.botao}
-            onPress={excluirTodosFavoritos}
-          >
-            <Text style={estilosFavoritos.textoBotao}>
-              <Ionicons name="trash" size={16} color="red" /> Excluir Favoritos
-            </Text>
-          </Pressable>
+          {/* Se a quantidade de lista de favoritos for maior que 0 vai aparecer */}
+          {listaFavoritos.length > 0 && (
+            <Pressable
+              style={estilosFavoritos.botao}
+              onPress={excluirTodosFavoritos}
+            >
+              <Text style={estilosFavoritos.textoBotao}>
+                <Ionicons name="trash" size={16} color="red" /> Excluir
+                Favoritos
+              </Text>
+            </Pressable>
+          )}
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
           {listaFavoritos.map((filme) => {
