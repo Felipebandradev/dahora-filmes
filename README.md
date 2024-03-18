@@ -30,6 +30,14 @@ se vc sair com ctrl C e querer entrar novamente. Digite npx expo start ou npm st
 
 Npx significa  instalar e executar
 
+#### Instalando o axios
+
+Axios é um cliente HTTP baseado-em-promessas para o node.js e para o navegador.
+
+Pare o node antes de intalação
+
+- npm install axios
+
 #### Para usar emulador no navegador
 
 - Android Studio
@@ -48,16 +56,19 @@ Npx significa  instalar e executar
 - ctrl C
 - para voltar `npm start` e a letra `a`
 
-#### Biblioteca de icons
+# DaHora Filmes
 
-- https://docs.expo.dev/guides/icons/
-- faz a instalação no terminal node. Antes pare se tiver rodando
-- npm install @expo/vector-icons
+Exemplo de app nativo multiplataforma criando com React Native e Expo.
 
-- site de icons https://icons.expo.fyi/Index
+## Branch 2
 
-- site para fontes https://docs.expo.dev/versions/latest/sdk/font/
-- sie para fazer a fonte funcionar https://docs.expo.dev/versions/latest/sdk/splash-screen/
+### Utilização de fonts adicionais
+
+- Dowload dos arqyuvos de font (formato TFF ou OTF)
+- Colocação na pasta `assets\fonts`
+- Instalação das libs `expo-fonts` e `expo-splash-screen`
+- Importação das fontes com auxílio dos hooks useFonts e useCallback.
+- Aplicação das fontes usando regras de StyleSheet.
 
 #### Fonte
 
@@ -70,74 +81,54 @@ Npx significa  instalar e executar
 - escolhe a fonte e baixe no seu computador
 - coloque na pasta que fonts na assets
 
-# DaHora Filmes
+#### Biblioteca de icons
 
-Exemplo de app nativo multiplataforma criando com React Native e Expo.
+- https://docs.expo.dev/guides/icons/
+- faz a instalação no terminal node. Antes pare se tiver rodando
+- npm install @expo/vector-icons
 
-## Branch 2
+- site de icons https://icons.expo.fyi/Index
 
-### Utilização de fonts adicionais
+- site para fontes https://docs.expo.dev/versions/latest/sdk/font/
+- sie para fazer a fonte funcionar https://docs.expo.dev/versions/latest/sdk/splash-screen/
 
-- Dowload dos arqyuvos de font (formato TFF ou OTF)
-- Colocação na pasta `assets/fonts`
-- instalação da libs `expo-fonyts` e ` expo-splash`
-
-- Colocação na pasta assets\fonts
-- Instalação das libs expo-fonts e expo-splash-screen
-  Importação das fontes com auxílio dos hooks useFonts e useCallback.
-  Aplicação das fontes usando regras de StyleSheet.
-
-  ## 03-componentes-de-telas
+## Branch 3
 
 - Criação das telas básicas: Sobre e Privacidade
-- Componente `ScrollView` para conteúdos maiores que a tela com suporte à rolagem
+- Componentes `ScrollView` para conteúdos maiores que a tela com suporte à rolagem
 - Componente `Linking` para criação de link para a web.
 
-## Branch 04
+## Branch 4
 
-Para Gerenciar os recursos de navegação é necessário usar uma biblioteca de navegação
+Para gerenciar os recursos de navegação é necessário usar uma biblioteca de navegação.
 
-As mais conhecidas são as **React Navigation** e a **Expo Router**
+As mais conhecidas são a **React Navigation** **Expo Router**.
 
-Atualmente (Feveireiro/ 2024) a biblioteca mais usadas e considerade padrão é a **React Navigation**
+Atualmente (Fevereiro/2024) a mais usada e considerada padrão é a **React Navigation**
 
-- React Navigation: https://reactnavigation.org
-- Expo Router: https://docs.expo.dev/router/introduction
+### Site oficial:
 
-### Como usar o react navigation com a navegação Stack
+- React Navigation: https://reactnavigation.org/
+- Expo Router: https://docs.expo.dev/router/introduction/
 
-#### Pacotes de Instalações
+### Como usar o React Navigation com navegação Stack
+
+#### Dependências
 
 React Navigation: `npm install @react-navigation/native`
 
-Depêndencias para navegação:
-
+Dependencia para navegação:
 `npx expo install react-native-screens react-native-safe-area-context`
 
-Mecanismo de navegação: `npm install @react-navigation/native-stack`
+Mecanismo de navegação Stack: `npm install @react-navigation/native-stack`
 
 #### Configurações
 
-No `App.js` importamos o `NavigationContainer` e o `creatNativeSatckNavigator`, em seguida os configuramos para determinar o `Stack.Screen` e seus componentes correspondentes (no momento, apenes `Home`, `Sobre`, `Privacidade`)
+No `App.js` importamos o `NavigationContainer` e o `createNativeStackNavigator`, em seguida os configuramos para determinar o `Stack.Navigator` e as telas `Stack.Screen` e seus componentes correspondentes (no momento, apenas `Home`, `Privacidade` e `Sobre`).
 
-## Branch 05-desafio--tela-BuscarFilmes
+Em `Home`, configure os botões para navegar para as telas usando a prop `navigation` e o método `navigate`.
 
-### Orientações
-
-1. Crie uma nova branch chamada **05-desafio--tela-BuscarFilmes**
-
-2. Crie a tela `BuscarFilmes` e programe os recursos necessários para a estruturação e estilização, deixando semelhante às imagens de referência _(Veja no Teams)_.
-
-3. Adicione esta tela à **Stack de navegação**
-
-4. Em `Home`, programe o botão que faz a navegação para a tela `BuscarFilmes`
-
-### Desafios
-
-- Usar um componente nativo de campo de entrada de formulário
-- Aplicar useState para captura do que é digitado no campo de formulário
-- Usar um componente de alerta para validação básica: exibir mensagem na tela caso o usuário toque no botão sem preencher nada no formulário
-- Usar o componente de alerta para mostrar mensagem dizendo "Você procurou pelo filme [mostrar o nome do filme digitado]
+## Branche 05
 
 ### Solução: recursos utilizados
 
@@ -146,47 +137,96 @@ No `App.js` importamos o `NavigationContainer` e o `creatNativeSatckNavigator`, 
   - `onChageText` no `TextInput` para captura em tempo real do nome do filme digitando e atualização no `state` usando a função `filmesDigitado`
   - `onSubmitEditing` no `TextInput` para acionamento da função `buscarFilmes`
 
-## Branch 06-telas-de-resultados-programação-api
+## Branche 06
 
 - Cadastro na API TheMovieDB
 - Criação de uma chave de API (API Key)
-- Configuração de varfikável ambiente através do arquivo `.env` contendo a API Key via Expo (arquivo ENV são ignorados no versionamento )
+- Configuração de varfikável ambiente através do arquivo `.env` contendo a API Key via Expo (arquivo ENV são ignorados no versionamento/.gitignore, poís são arquivos que outras pessoas não possam ver )
 
 #### Consumo de dados da API
 
 - Instalação da lib **Axios**
 - Configuração/exportação do `services/api-movidedb.js` contendo a programação básica de acesso à API para uso em diferentes partes do app.
 
-#### Exibição dos Resultados
+#### Exibição dos resultados
 
-- Utilização do componente `FlatList` para listagem dinâmica dos resultados
-- Criação do componente `CardFilme` com uso de prop (`filme`) com carregamento do `title` e do `poster-path` (imagem) de cada filme.
+- Utilização do componente FlatList para listagem dinâmica dos resultados
+- Criação do componente CardFilme com uso de prop (filme) com carregamento do title e do poster_path (imagem) de cada filme.
 
-## Branch 07-melhorias-nos-resultados
+## Branche 07
 
-- Loading usando `ActivityIndicator`
-- Em `Resultados`, aplicamos à `FlatList` componentes personalizados para o caso de não haver filmes na busca (`NaoEncontrado/ListEmptyComponent`) e para separar cada elemento da `FlatList` (`Separador/ItemSeparatorComponent`)
-- Em `CardFilme` colocamos uma condicional para o carregamento de imagem alternativa caso algum filme não tenha imagem, e também ícones nos botões.
-  tem menu de contexto
+- Loading usando `ActivityIndicador`
+- Em `Resultados`, aplicamos à `FlatList` componentes personali para caso de não haver filmes na busca (`NaoEncontrado\ListEmptyComponent`) e para separar cada elemento da `Flatlist`(`separador\ItemSeparatorComponent`)
+- Em `CardFilme` colocamos uma condicional para carregamento de imagem alternativa caso algum filme não tenha imagem, e também ´icones nos botões.
 
-  ## Branch 08-tela-de-detaçhes-do-filme
+## Branche 08
 
-  - Criação de tela `Detalhes.js` e edição dela à `stack` em `App.js`
-  - Em `CardFilme`, utilização do hook ` useNavigation` para funcionalidade de navegação do botão **Leia Mais**
+- criação da tela `Detalhe` e adição dela à `Stack` em `App.js`
+- Em `cardFilme`, utilização do hook `useNavigation` para funcionalidade de navegação do botão **Leia mais**
+- Em `App.js` na `Stack.Screen Datalhes`, adicionamos uma prop `options` configurada para exibir um `Button` responsável por permitir a navegação direta para `Home`.
 
-  - Em `App.js` na `Stack.Screen Detalhes`, adicionamos uma prop `options` configurada para exibir um `Pressable` ou `Button` responsável por permitir a navegação direta para `Home`
+## Branche 09
 
-  ## Branch 09-gerenciamento-de-favoritos
+### REcurso nativo/lib: AsyncStorage
 
-### Recurso nativo/lib: AsyncStorage
+`AsyncStorage` é uma lib mantida pela equipe do Expo que permite armazenar dados **offline** em formato de `string` no dispositivo do usuário. É uma lib semelhante à API Web `localStorage` usada em sites.
 
-`AsyncStorage` é uma lib mantida pela equipe de Expo que permite armazenar dados **offline** em formato `string` no dispositivo do usuário. é uma lib semelhante á API web `localStorage` usa em sites.
+## Branche 10
 
-Link da Instalação: `https://docs.expo.dev/versions/latest/sdk/async-storage/`
-Link da Documentação: `https://react-native-async-storage.github.io/async-storage/docs/usage`
+### Roteiro geral para o build usando o Expo EAS
+
+1. Acessar a sua conta Expo e criar um projeto no Expo EAS: https://expo.dev
+2. instalar o eas-cli
+3. Adicionar o id do projeto ao aplicativo (isso modificará o arquivo `app.json`)
+4. Varificar a conta logada: `npx eas whoami`
+
+- 4.1. Se não estiver logado, use: `npx eas login`
+- 4.2 Se tiver logado e quiser deslogar (ou trocar de usuário), use `eas logout`
+
+5. configure o build (compilação) `eas build:configure` se der erro `npx eas build:configure`
+6. escolha Android e dê enter. Isso criará um arquivo chamado `eas.json` mude esse arquivo/pasta
+7. É necessário modificar o segmaento `preview` dentro do `eas.json`, adcionar o código abaixo
+
+```json
+"developmentClient" : true,
+    "android" : {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease"
+    },
+```
+
+8. Analisar os pacotes do projeto e outros possíveis problema: `npx -y expo-doctor`. Se sinalizar pacotes desatualizados, execute: `npx expo install --fix`. Se sinalizar outros problemas (nas imagens por exemplo), corrija.
+
+9. Adicionar ao `eas.json` dentro de `preview` a API key de acordo com o conteúdo do arquivo `.env`:
+
+```json
+"env": {
+  "EXPO_PUBLIC_NOME_ENV": "VALOR"
+}  //isso está na pasta  eas.json linha 18
+```
+
+10. Iniciar o processo de build/compilação: `eas build --profile preview`
 
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
 
 https://encycolorpedia.pt/search?upload=70418cc38d78aef11636c06c25fe4cf632d96c9ab9f48f63e0
+
+Analisar: npx expo-doctor@latest
+
+Atualizar: npx expo install --fix
+
+Fazer novo build: eas build --profile preview
+
+#### Fazer teste localmente depois que já fez a Branche 10
+
+npm start
+
+coloque o letra S (antes era a letra A )
+
+depois use o qr-code
+
+escolha expo ro no seu celular
+
+Dica pode fazer o build no final.
