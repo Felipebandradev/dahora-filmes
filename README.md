@@ -10,7 +10,7 @@ https://expo.dev/
 - CMD do node
 - Entra na pasta mobile
   Pode entrar assim:
-  C:\Users\aline.mteixeira2>cd\ entre
+  C:\Users\diretório>cd\ entre
   C:\>cd mobile entre
   C:\mobile>
 
